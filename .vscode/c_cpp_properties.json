@@ -4,7 +4,9 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/dependencies/include/glfw/3.4"
+                "${workspaceFolder}/dependencies/include/glfw/3.4",
+                "${workspaceFolder}/dependencies/include/glfw/3.4/include",
+                "${workspaceFolder}/dependencies/include/glfw/3.4/include/GLFW"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang++",
