@@ -1,42 +1,94 @@
 #include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include <glfw/3.4/include/GLFW/glfw3.h>
 #include <iostream>
 
-void framebuffer_size_callback(GLFWwindow *window, int width, int height);
+//프레임 버퍼 함수 크기 및 프로세스 입력 함수 선언.
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 
-//glfw를 사용해서 opengl을 사용하는 main 함수.
+// 기본 해상도 설정.
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 600;
+
 int main()
 {
-    //opengl을 윈도우로 사용하기 위한 기본 변수.
-    GLFWwindow* window;
-    if(!glfwInit())
-    {
-        return -1;
-    }
+    // glfw: 초기화, glfw를 초기화하고 내부 필요한 데이터를 초기화한다.
+    //windowHint를 통해서 현재 glfw의 버전과 opengl의 core를 설정해 준다.
+    // ------------------------------
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    //해당 윈도우에 윈도우를 생성함, 이때 해상도 및 윈도우 이름을 설정.
-    //만약 해당 사항에서, 윈도우 생성이 되지 않으면, glfw윈도우를 제거.
-    window = glfwCreateWindow(800, 400, "Hello World", NULL,NULL);
-    if(!window)
+    //만약 애플이라면, 애플버전으로 한번 더 해준다.
+#ifdef __APPLE__
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
+
+    // glfw윈도우를 생성한다. 
+    // Create Window를 통해서 opengl윈도우 생성 및 해상도 설정을 진행.
+    // 실패한다면 glfw를 초기화하고 종료한다.
+    // --------------------
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+    if (window == NULL)
     {
+        std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;
     }
-
-    //윈도우 생성이 됐다면, 현재 윈도우를 설정.
     glfwMakeContextCurrent(window);
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-    //윈도우가 닫히지 않는다면, gl 클리어 -> gl버퍼 변경 -> gl의 다중 입출력 이벤트를 실행
-    //해당 순서로 메인 함수를 진행한다.
-    while(!glfwWindowShouldClose(window))
+    // glad: 초기화.
+    // glad에 현재 glfw의 프로세스 주소를 넘겨서 현재 glad가 glfw를 관리할수 있도록 해 준다.
+    // ---------------------------------------
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
+        std::cout << "Failed to initialize GLAD" << std::endl;
+        return -1;
+    }    
+
+    // render loop.
+    // 현재 glfw window의 메인 루프를 진행한다.
+    // 현재 윈도우가 켜져 있으면, 입력을 받고, 버퍼를 교체하고, 이벤트를 돌려준다.
+    // -----------
+    while (!glfwWindowShouldClose(window))
+    {
+        // input
+        // -----
+        processInput(window);
+
+        // render
+        // ------
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        // glfw: 버퍼를 교체해서 다음 프레임으로 넘어가 주고, pollevent를 통해서 입출력을 받아준다.
+        // 입출력은 키보드나 마우스 입력을 받는다.
+        // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
-    //만약 닫혔다면 생성실패와 동일하게 terminate 진행.
+    // glfw: 만약 glfw가 꺼지면, 해당 glfw에 대한 데이터를 완전히 없애준다.
+    // 댕글링 방지용인듯 
+    // ------------------------------------------------------------------
     glfwTerminate();
     return 0;
+}
+
+// process all input: 해당 프레임에서 glfw에 관련된 키가 입력됐는지 확인하고, 쿼리한다.
+// ---------------------------------------------------------------------------------------------------------
+void processInput(GLFWwindow *window)
+{
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+
+// glfw: 윈도우 크기 변경 시 해당 함수 호출.
+// ---------------------------------------------------------------------------------------------
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    // 뷰포트와 새창 크기의 일치를 확인.
+    glViewport(0, 0, width, height);
 }
