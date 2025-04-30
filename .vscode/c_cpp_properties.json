@@ -4,9 +4,15 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
+                "${workspaceFolder}/src/header",
                 "${workspaceFolder}/dependencies/include/glfw/3.4",
                 "${workspaceFolder}/dependencies/include/glfw/3.4/include",
                 "${workspaceFolder}/dependencies/include/glfw/3.4/include/GLFW",
+                "${workspaceFolder}/dependencies/include/glm",
+                "${workspaceFolder}/assimp/include",
+                "${workspaceFolder}/assimp/include/assimp",
+                "${workspaceFolder}/assimp/lib",
+                "${workspaceFolder}/assimp/bin",
                 "${workspaceFolder}/dependencies/include"
             ],
             "defines": [],
