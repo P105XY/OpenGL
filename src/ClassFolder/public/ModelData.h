@@ -47,7 +47,6 @@ public:
     }
 
 private:
-    vector<Mesh> 
-}
+};
 
 #endif //End MODELDATA_H

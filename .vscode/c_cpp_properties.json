@@ -4,7 +4,7 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/src/header",
+                "${workspaceFolder}/src/ClassFolder/public",
                 "${workspaceFolder}/dependencies/include/glfw/3.4",
                 "${workspaceFolder}/dependencies/include/glfw/3.4/include",
                 "${workspaceFolder}/dependencies/include/glfw/3.4/include/GLFW",
