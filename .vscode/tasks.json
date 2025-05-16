@@ -12,6 +12,8 @@
                 "-g",
                 "-I${workspaceFolder}/dependencies/include",
 				"-I${workspaceFolder}/src/ClassFolder",
+				"-I${workspaceFolder}/src/Util",
+				"-I${workspaceFolder}/src/Shader",
                 "-L${workspaceFolder}/dependencies/lib",
                 "${workspaceFolder}/src/Source/glad.c",
                 "${workspaceFolder}/src/Source/*.cpp",

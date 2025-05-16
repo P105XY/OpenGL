@@ -5,6 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/src/ClassFolder/public",
+                "${workspaceFolder}/src/ClassFolder/Util",
+                "${workspaceFolder}/src/ClassFolder/Shader",
                 "${workspaceFolder}/dependencies/include/glfw/3.4",
                 "${workspaceFolder}/dependencies/include/glfw/3.4/include",
                 "${workspaceFolder}/dependencies/include/glfw/3.4/include/GLFW",
