@@ -52,5 +52,9 @@
         "iomanip": "cpp",
         "sstream": "cpp"
     },
+    "python.analysis.extraPaths": [
+        "~/.local/lib/Google/google_appengine",
+        "~/.local/lib/Google/google_appengine/lib/flask-0.12"
+    ],
     "C_Cpp.errorSquiggles": "disabled"
 }
