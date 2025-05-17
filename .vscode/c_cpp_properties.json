@@ -4,9 +4,9 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/src/ClassFolder/public",
-                "${workspaceFolder}/src/ClassFolder/Util",
-                "${workspaceFolder}/src/ClassFolder/Shader",
+                "${workspaceFolder}/src/core/public",
+                "${workspaceFolder}/src/core/Util",
+                "${workspaceFolder}/src/core/Shader",
                 "${workspaceFolder}/dependencies/include/glfw/3.4",
                 "${workspaceFolder}/dependencies/include/glfw/3.4/include",
                 "${workspaceFolder}/dependencies/include/glfw/3.4/include/GLFW",

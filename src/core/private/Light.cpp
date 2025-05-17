@@ -8,10 +8,10 @@ Light::Light(const char *vertexPath, const char *fragmentPath, const glm::vec3 &
 {
     this->lightColor = initLightColor;
     std::string LightVSCodeStr;
-    FileFromString("src/ClassFolder/Shader/LightShader.vs", LightVSCodeStr);
+    FileFromString("src/core/Shader/LightShader.vs", LightVSCodeStr);
 
     std::string LightFSCodeStr;
-    FileFromString("src/ClassFolder/Shader/LightShader.fs", LightFSCodeStr);
+    FileFromString("src/core/Shader/LightShader.fs", LightFSCodeStr);
     CreateShader(LightVSCodeStr.c_str(), LightFSCodeStr.c_str());
 
     lightColor = initLightColor;

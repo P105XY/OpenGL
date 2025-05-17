@@ -101,16 +101,16 @@ int main()
 
     // Shader코드를 가져와서 컴파일 이후 프로그램 id를 할당.
     std::string vertexShaderCodeStr;
-    FileFromString("src/ClassFolder/Shader/LitShader.vs", vertexShaderCodeStr);
+    FileFromString("src/core/Shader/LitShader.vs", vertexShaderCodeStr);
 
     std::string fragmentShaderCodeStr;
-    FileFromString("src/ClassFolder/Shader/LitShader.fs", fragmentShaderCodeStr);
+    FileFromString("src/core/Shader/LitShader.fs", fragmentShaderCodeStr);
 
     std::string LightVSCodeStr;
-    FileFromString("src/ClassFolder/Shader/LightShader.vs", LightVSCodeStr);
+    FileFromString("src/core/Shader/LightShader.vs", LightVSCodeStr);
 
     std::string LightFSCodeStr;
-    FileFromString("src/ClassFolder/Shader/LightShader.fs", LightFSCodeStr);
+    FileFromString("src/core/Shader/LightShader.fs", LightFSCodeStr);
 
     Shader *shaderClass = new Shader(vertexShaderCodeStr.c_str(), fragmentShaderCodeStr.c_str());
     Light *lightShaderClass = new Light(LightVSCodeStr.c_str(), LightFSCodeStr.c_str(), WHITELIGHT);
