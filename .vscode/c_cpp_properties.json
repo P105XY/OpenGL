@@ -4,6 +4,7 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
+                "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/include/python3.13",
                 "${workspaceFolder}/src/core/public",
                 "${workspaceFolder}/src/core/Util",
                 "${workspaceFolder}/src/core/Shader",
@@ -11,13 +12,20 @@
                 "${workspaceFolder}/dependencies/include/glfw/3.4/include",
                 "${workspaceFolder}/dependencies/include/glfw/3.4/include/GLFW",
                 "${workspaceFolder}/dependencies/include/glm",
+                "${workspaceFolder}/dependencies/pybind11/include",
                 "${workspaceFolder}/assimp/include",
                 "${workspaceFolder}/assimp/include/assimp",
                 "${workspaceFolder}/assimp/lib",
                 "${workspaceFolder}/assimp/bin",
-                "${workspaceFolder}/dependencies/include"
+                "${workspaceFolder}/dependencies/include",
+                "${workspaceFolder}/dependencies/lib"
             ],
             "defines": [],
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks",
+                "/opt/homebrew/Cellar/python@3.13/3.13.3"
+            ],
             "compilerPath": "/usr/bin/clang++",
             "cStandard": "c17",
             "cppStandard": "c++17",

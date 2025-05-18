@@ -3,6 +3,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glfw/3.4/include/GLFW/glfw3.h>
 #include <iostream>
+
 #include "public/Shader.h"
 
 const glm::vec3 RedColor(glm::vec3(1.0f,0.0f,0.0f));
@@ -11,6 +12,7 @@ class Light : public Shader
 {
 public:
     unsigned int lightID;
+
     unsigned int lightObjVAO;
     unsigned int lightobjVBO;
 
