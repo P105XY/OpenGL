@@ -2,36 +2,13 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "cppbuild",
-			"label": "C/C++: clang++ 활성 파일 빌드",
-			"command": "/usr/bin/clang++",
-			"args": [
-				"-std=c++17",
-                "-fdiagnostics-color=always",
-                "-Wall",
-                "-g",
-                "-I${workspaceFolder}/dependencies/include",
-				"-I${workspaceFolder}/src/core",
-				"-I${workspaceFolder}/src/Util",
-				"-I${workspaceFolder}/src/Shader",
-				"-I${workspaceFolder}/dependencies/pybind11/include",
-				"-I/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/include/python3.13",
-                "-L${workspaceFolder}/dependencies/lib",
-				"-lglfw.3",
-				"-framework","OpenGL",
-                "-o","${workspaceFolder}/main.exe",
-                "${workspaceFolder}/src/core/glad.c",
-                "${workspaceFolder}/src/core/main.cpp",
-				"-Wno-deprecated"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
+			"label": "Build OpenGLRenderer",
+			"type": "shell",
+			"command": "cmake --build build --target app",
+			"group": "build",
 			"problemMatcher": [
 				"$gcc"
-			],
-			"group": "build",
-			"detail": "컴파일러: /usr/bin/clang++"
+			]
 		}
 	]
 }

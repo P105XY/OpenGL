@@ -1,11 +1,7 @@
+#include "public/FileSupport.h"
 #include <fstream>
-#include <sstream>
-#include <string>
-#include <stdexcept>
-#include <glad/glad.h>
-#include <glfw/3.4/include/GLFW/glfw3.h>
 
-static void FileFromString (const std::string& filepath, std::string& refStringPath)
+void FileFromString (const std::string& filepath, std::string& refStringPath)
 {
     std::ifstream file(filepath, std::ios::in | std::ios::binary);
     if(!file)

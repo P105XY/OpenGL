@@ -4,7 +4,7 @@
 #include <glfw/3.4/include/GLFW/glfw3.h>
 #include <iostream>
 
-#include "Util/FileSupport.h"
+#include "public/FileSupport.h"
 #include "public/Shader.h"
 #include "public/Camera.h"
 #include "public/Texture.h"

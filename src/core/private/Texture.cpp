@@ -1,7 +1,7 @@
 #include "public/Texture.h"
 
 #define STB_IMAGE_IMPLEMENTATION
-#include "Util/std_image.h"
+#include "public/std_image.h"
 
 Texture::Texture()
 {
