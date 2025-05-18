@@ -2,7 +2,7 @@
 #include <glfw/3.4/include/GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include "public/Camera.h"
+#include <public/Camera.h>
 
 Camera::Camera(const glm::vec3 initPos)
 {
