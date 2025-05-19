@@ -10,6 +10,8 @@
 #include <postprocess.h>
 #include <Shader.h>
 
+#include "public/Texture.h"
+
 using namespace std;
 
 struct Vertex {
@@ -17,11 +19,6 @@ struct Vertex {
     glm::vec3 Normal;
     glm::vec2 TexCoords;
 };
-
-struct Texture {
-    unsigned int id;
-    string type;
-};  
 
 class Mesh {
     public:

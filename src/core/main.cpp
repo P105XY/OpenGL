@@ -51,6 +51,7 @@ int main()
     {
         return -1;
     }
+
     glfwSetErrorCallback(
         [](int error, const char *errorDesc)
         {

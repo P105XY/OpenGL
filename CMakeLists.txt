@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(PkgConfig REQUIRED)
-find_package(pybind11 REQUIRED)
 
 add_subdirectory(src/core)
 
@@ -29,10 +28,10 @@ target_include_directories(renderer PUBLIC
 # 실제로 필요한 라이브러리만 링크
 target_link_libraries(renderer PUBLIC
     "${CMAKE_SOURCE_DIR}/dependencies/lib/libglfw.3.4.dylib" # e.g. -lglfw
-      "-framework Cocoa"
-  "-framework OpenGL"
-  "-framework IOKit"
-  "-framework CoreVideo"
+    "-framework Cocoa"
+    "-framework OpenGL"
+    "-framework IOKit"
+    "-framework CoreVideo"
 )
 
 # ------------------------------------------------------------------------------
