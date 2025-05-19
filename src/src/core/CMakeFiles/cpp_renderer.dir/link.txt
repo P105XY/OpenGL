@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -bundle -Wl,-headerpad_max_install_names -Xlinker -undefined -Xlinker dynamic_lookup -o cpp_renderer.so CMakeFiles/cpp_renderer.dir/renderer.cpp.o  ../../librenderer.a /Users/sinhyeonjin/Desktop/Engine/OpenGL/dependencies/lib/libglfw.3.4.dylib -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo

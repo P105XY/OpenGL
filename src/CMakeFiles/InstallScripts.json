@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/sinhyeonjin/Desktop/Engine/OpenGL/src/cmake_install.cmake",
+		"/Users/sinhyeonjin/Desktop/Engine/OpenGL/src/src/core/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

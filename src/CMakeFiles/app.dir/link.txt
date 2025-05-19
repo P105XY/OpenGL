@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/app.dir/core/main.cpp.o -o app  librenderer.a /Users/sinhyeonjin/Desktop/Engine/OpenGL/dependencies/lib/libglfw.3.4.dylib -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo

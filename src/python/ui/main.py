@@ -1,8 +1,10 @@
 # Trumpet Renderer GUI toolkit.
 
 import sys
+
 from PyQt6 import uic
 from PyQt6.QtCore import *
+from PyQt6.QtGui import cpp_renderer
 from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6.QtWidgets import QVBoxLayout, QHBoxLayout, QGridLayout, QWidget, QPushButton
 
